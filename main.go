@@ -40,7 +40,6 @@ func main() {
 }
 
 
-// STRUCT TEMPLATE
 type Project struct {
 	ID 				int
 	ProjectName 	string
@@ -52,7 +51,6 @@ type Project struct {
 	Image 			string
 }
 
-// LOCAL DATABASE
 var dataProject = []Project {}
 
 
@@ -133,7 +131,6 @@ func projectDetail(w http.ResponseWriter, r *http.Request)  {
 		"RenderProjectDetail": RenderProjectDetail,
 	}
 
-	// fmt.Println(data)
 	tmpl.Execute(w, data)
 }
 
@@ -210,7 +207,6 @@ func editProject(w http.ResponseWriter, r *http.Request)  {
 	}
 
 	tmpl.Execute(w, data)
-
 }
 
 func deleteProject(w http.ResponseWriter, r *http.Request)  {
@@ -230,8 +226,6 @@ func deleteProject(w http.ResponseWriter, r *http.Request)  {
 
 
 
-// ADDITIONAL FUNCTION
-// GET DURATION
 func getDuration(startDate string, endDate string) string {
 
 	layout := "2006-01-02"
@@ -259,7 +253,6 @@ func getDuration(startDate string, endDate string) string {
 	return duration
 }
 
-// CHANGE DATE FORMAT
 func formatDate(InputDate string) string {
 
 	layout := "2006-01-02"
@@ -270,7 +263,6 @@ func formatDate(InputDate string) string {
 	return formated
 }
 
-// RETURN DATE FORMAT
 func returnDate(InputDate string) string {
 
 	layout := "02 January 2006"
